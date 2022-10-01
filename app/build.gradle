@@ -1,0 +1,57 @@
+
+plugins {
+    // Apply the application plugin to add support for building a CLI application in Java.
+    id 'application'
+
+    id 'org.openjfx.javafxplugin' version '0.0.13'
+
+    id "org.beryx.jlink" version "2.25.0"
+}
+
+sourceSets {
+    main {
+        resources {
+            srcDirs = ["src/main/resources"]
+            includes = ["**/*.fxml", "**/*.css", "**/*.png", "**/*.ico"]
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.13.2'
+
+    implementation 'com.google.guava:guava:31.0.1-jre'
+
+    implementation 'io.github.palexdev:materialfx:11.13.5'
+}
+
+application {
+    mainClass = 'infokomputer.App'
+    mainModule ='infokomputer.App.main'
+}
+
+javafx{
+    version = '17'
+    modules = ['javafx.controls', 'javafx.fxml']
+}
+
+jlink {
+    launcher {
+        name = 'InfoKomputer'
+    }
+
+    jpackage{
+        installerOutputDir = file("$buildDir/installers")
+        imageOptions += ['--icon', 'src/main/resources/icons/icon.ico']
+        installerOptions = [
+                '--vendor', 'Wojciech Koziol',
+                '--win-per-user-install', '--win-dir-chooser',
+                '--win-shortcut', '--win-menu'
+        ]
+
+    }
+}

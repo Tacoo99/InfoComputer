@@ -1,0 +1,151 @@
+.myDialog{
+    -fx-background-color: white;
+    -fx-border-style: none;
+    -fx-border-color: #e2e2e2;
+    -fx-border-width: 2;
+}
+.myDialog:header *.header-panel{
+    -fx-background-color: white;
+}
+.myDialog > *.button-bar > *.container{
+    -fx-background-color: white;
+}
+
+/**************************************************
+ * Text Fields
+**************************************************/
+.mfx-text-field {
+    -fx-min-width: 130;
+    -fx-font-family: 'Visby Round CF Medium';
+}
+
+.mfx-text-field:hover {
+    -fx-background-color:#CDCDCD;
+}
+
+
+
+.mfx-text-field .floating-text {
+    -fx-font-family: 'Visby Round CF Medium';
+}
+
+
+#customField {
+    -fx-border-color: -common-gradient;
+}
+
+#customField .floating-text {
+    -fx-text-fill: -mfx-red;
+}
+
+/**************************************************
+ * Password Fields
+**************************************************/
+#customPassword {
+    -fx-border-color: -secondary-gradient;
+}
+
+#customPassword:masked {
+    -fx-text-fill: -mfx-blue;
+}
+
+#customPassword .mfx-font-icon {
+    -mfx-color: -mfx-blue;
+}
+
+#customPassword .mfx-context-menu .mfx-menu-item:disabled .mfx-font-icon {
+    -mfx-color: #bcbcbc;
+}
+
+#customPassword .floating-text {
+    -fx-text-fill: -mfx-blue;
+}
+
+#validatedField {
+    -mfx-hide-character: '?';
+}
+
+#validatedField:invalid {
+    -fx-border-color: -mfx-red;
+}
+
+#validatedField:invalid .floating-text {
+    -fx-text-fill: -mfx-red;
+}
+
+#validatedField:invalid .mfx-font-icon {
+    -mfx-color: -mfx-red;
+}
+
+#validationLabel {
+    -fx-font-family: 'Visby Round CF Demi Bold';
+    -fx-font-size: 11;
+}
+
+
+
+.mfx-button {
+    -fx-font-family: 'Visby Round CF Medium';
+    -fx-text-fill: -mfx-text-he;
+}
+
+.mfx-button:hover {
+    -fx-background-color:#D3D3D3;
+}
+
+.mfx-button .mfx-ripple-generator {
+    -mfx-ripple-radius: 40;
+    -mfx-auto-clip: true;
+}
+
+.mfx-button .text {
+    -fx-font-smoothing-type: lcd;
+}
+
+#custom {
+    -fx-background-color: -mfx-purple;
+    -fx-text-fill: white
+}
+
+.outline-button {
+    -fx-background-color: transparent;
+    -fx-border-color: -mfx-purple;
+    -fx-border-radius: 3;
+
+    -fx-text-fill: -mfx-purple;
+}
+
+.outline-button:hover,
+.outline-button:focused {
+    -fx-background-color: -mfx-purple;
+    -fx-text-fill: white;
+}
+
+
+.link-button {
+    -fx-background-color: transparent;
+    -fx-border-radius: 3;
+    -fx-text-fill: #0096FF;
+    -fx-underline: true;
+    -fx-cursor: hand;
+}
+
+.link-button:armed,
+.link-button:focused {
+    -fx-border-color: #006BFF;
+    -fx-text-fill: #006BFF;
+}
+
+.link-button .mfx-ripple-generator {
+    -mfx-ripple-color: #D9E9FF;
+}
+
+.Text{
+    -fx-font-family:Visby Round CF Medium !important;
+}
+
+#copyIcon:hover, #computerCopy:hover, #userCopy:hover, #ipCopy:hover, #helpdeskCopy:hover, #websiteCopy:hover, .mfx-text-field:hover{
+    -fx-opacity: 0.7;
+    -fx-translate-y: 1;
+}
+
