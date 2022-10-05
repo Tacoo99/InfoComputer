@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="mainAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="606.0" prefWidth="288.0" style="-fx-background-color: ffff;" stylesheets="@css/stylesheet.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="infokomputer.InfoKomputer">
+<AnchorPane fx:id="mainAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="606.0" prefWidth="288.0" style="-fx-background-color: ffff;" stylesheets="@css/stylesheet.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="infokomputer.InfoKomputerClass">
    <children>
       <Text layoutX="109.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Komputer">
          <font>
@@ -23,10 +24,13 @@
             </Text>
          </children>
       </AnchorPane>
-      <MFXTextField fx:id="computerText" accessibleHelp="TEST" accessibleText="TEST" editable="false" floatMode="BORDER" floatingText="Komputer" layoutX="82.0" layoutY="137.0" minWidth="105.0" onMouseClicked="#copyToClipboard" prefHeight="38.0" prefWidth="157.0" textLimit="50">
+      <MFXTextField id="computerField" fx:id="computerText" accessibleHelp="TEST" accessibleText="TEST" editable="false" floatMode="BORDER" floatingText="Komputer" layoutX="82.0" layoutY="137.0" minWidth="105.0" onMouseClicked="#copyToClipboard" onMouseExited="#mouseExited" prefHeight="38.0" prefWidth="157.0" textLimit="50">
          <font>
             <Font name="Visby Round CF Medium" size="12.0" />
          </font>
+         <tooltip>
+            <Tooltip fx:id="computerTooltip" opacity="0.8" />
+         </tooltip>
       </MFXTextField>
       <ImageView id="copyIcon" fitHeight="38.0" fitWidth="37.0" layoutX="49.0" layoutY="91.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -38,10 +42,13 @@
             <Font size="18.0" />
          </font>
       </Text>
-      <MFXTextField fx:id="usernameText" accessibleText="g" editable="false" floatMode="BORDER" floatingText="Użytkownik" layoutX="82.0" layoutY="239.0" onMousePressed="#copyToClipboard" prefHeight="38.0" prefWidth="157.0" textLimit="50">
+      <MFXTextField id="userField" fx:id="usernameText" accessibleText="g" editable="false" floatMode="BORDER" floatingText="Użytkownik" layoutX="82.0" layoutY="239.0" onMouseExited="#mouseExited" onMousePressed="#copyToClipboard" prefHeight="38.0" prefWidth="157.0" textLimit="50">
          <font>
             <Font name="Visby Round CF Medium" size="12.0" />
          </font>
+         <tooltip>
+            <Tooltip fx:id="userTooltip" />
+         </tooltip>
       </MFXTextField>
       <ImageView id="copyIcon" fitHeight="38.0" fitWidth="37.0" layoutX="47.0" layoutY="191.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -53,10 +60,13 @@
             <Font size="18.0" />
          </font>
       </Text>
-      <MFXTextField fx:id="ipText" accessibleText="g" editable="false" floatMode="BORDER" floatingText="Adres IP" layoutX="84.0" layoutY="337.0" onMousePressed="#copyToClipboard" prefHeight="38.0" prefWidth="157.0" textLimit="50">
+      <MFXTextField id="ipField" fx:id="ipText" accessibleText="g" editable="false" floatMode="BORDER" floatingText="Adres IP" layoutX="84.0" layoutY="337.0" onMouseExited="#mouseExited" onMousePressed="#copyToClipboard" prefHeight="38.0" prefWidth="157.0" textLimit="50">
          <font>
             <Font name="Visby Round CF Medium" size="12.0" />
          </font>
+         <tooltip>
+            <Tooltip fx:id="ipTooltip" />
+         </tooltip>
       </MFXTextField>
       <ImageView id="copyIcon" fitHeight="38.0" fitWidth="37.0" layoutX="49.0" layoutY="289.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -68,32 +78,35 @@
             <Font size="18.0" />
          </font>
       </Text>
-      <MFXTextField fx:id="helpdeskText" accessibleText="g" editable="false" floatMode="BORDER" floatingText="Numer telefonu" layoutX="84.0" layoutY="433.0" onMousePressed="#copyToClipboard" prefHeight="38.0" prefWidth="157.0" textLimit="50">
+      <MFXTextField id="phoneField" fx:id="helpdeskText" accessibleText="g" editable="false" floatMode="BORDER" floatingText="Numer telefonu" layoutX="84.0" layoutY="433.0" onMouseExited="#mouseExited" onMousePressed="#copyToClipboard" prefHeight="38.0" prefWidth="157.0" textLimit="50">
          <font>
             <Font name="Visby Round CF Medium" size="12.0" />
          </font>
+         <tooltip>
+            <Tooltip fx:id="phoneTooltip" />
+         </tooltip>
       </MFXTextField>
       <ImageView id="copyIcon" fitHeight="38.0" fitWidth="37.0" layoutX="49.0" layoutY="385.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@icons/helpdesk.png" />
          </image>
       </ImageView>
-      <ImageView id="computerCopy" fitHeight="25.0" fitWidth="26.0" layoutX="207.0" layoutY="144.0" onMouseClicked="#copyToClipboard" pickOnBounds="true" preserveRatio="true">
+      <ImageView id="computerCopy" fitHeight="25.0" fitWidth="26.0" layoutX="207.0" layoutY="144.0" onMouseClicked="#copyToClipboard" onMouseExited="#mouseExited" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@icons/copy.png" />
          </image>
       </ImageView>
-      <ImageView id="userCopy" fitHeight="25.0" fitWidth="26.0" layoutX="207.0" layoutY="246.0" onMousePressed="#copyToClipboard" pickOnBounds="true" preserveRatio="true">
+      <ImageView id="userCopy" fitHeight="25.0" fitWidth="26.0" layoutX="207.0" layoutY="246.0" onMouseClicked="#copyToClipboard" onMouseExited="#mouseExited" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@icons/copy.png" />
          </image>
       </ImageView>
-      <ImageView id="ipCopy" fitHeight="25.0" fitWidth="26.0" layoutX="207.0" layoutY="344.0" onMousePressed="#copyToClipboard" pickOnBounds="true" preserveRatio="true">
+      <ImageView id="ipCopy" fitHeight="25.0" fitWidth="26.0" layoutX="207.0" layoutY="344.0" onMouseClicked="#copyToClipboard" onMouseExited="#mouseExited" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@icons/copy.png" />
          </image>
       </ImageView>
-      <ImageView id="helpdeskCopy" fitHeight="25.0" fitWidth="26.0" layoutX="207.0" layoutY="440.0" onMousePressed="#copyToClipboard" pickOnBounds="true" preserveRatio="true">
+      <ImageView id="helpdeskCopy" fitHeight="25.0" fitWidth="26.0" layoutX="207.0" layoutY="440.0" onMouseClicked="#copyToClipboard" onMouseExited="#mouseExited" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@icons/copy.png" />
          </image>
@@ -103,17 +116,20 @@
             <Font size="18.0" />
          </font>
       </Text>
-      <MFXTextField fx:id="websiteText" accessibleText="g" editable="false" floatMode="BORDER" floatingText="Strona" layoutX="85.0" layoutY="534.0" onMousePressed="#copyToClipboard" prefHeight="38.0" prefWidth="157.0" textLimit="50">
+      <MFXTextField id="websiteField" fx:id="websiteText" accessibleText="g" editable="false" floatMode="BORDER" floatingText="Strona" layoutX="85.0" layoutY="534.0" onMouseExited="#mouseExited" onMousePressed="#copyToClipboard" prefHeight="38.0" prefWidth="157.0" textLimit="50">
          <font>
             <Font name="Visby Round CF Medium" size="12.0" />
          </font>
+         <tooltip>
+            <Tooltip fx:id="websiteTooltip" />
+         </tooltip>
       </MFXTextField>
       <ImageView id="copyIcon" fitHeight="38.0" fitWidth="37.0" layoutX="47.0" layoutY="485.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@icons/website.png" />
          </image>
       </ImageView>
-      <ImageView id="websiteCopy" fitHeight="25.0" fitWidth="26.0" layoutX="207.0" layoutY="541.0" onMousePressed="#copyToClipboard" pickOnBounds="true" preserveRatio="true">
+      <ImageView id="websiteCopy" fitHeight="25.0" fitWidth="26.0" layoutX="207.0" layoutY="541.0" onMouseClicked="#copyToClipboard" onMouseExited="#mouseExited" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@icons/copy.png" />
          </image>

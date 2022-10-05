@@ -3,9 +3,13 @@ package infokomputer;
 import io.github.palexdev.materialfx.controls.MFXTextField;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.control.Tooltip;
 import javafx.scene.input.Clipboard;
 import javafx.scene.input.ClipboardContent;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Window;
+
 
 import java.awt.*;
 import java.io.BufferedReader;
@@ -14,20 +18,31 @@ import java.io.InputStreamReader;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.Arrays;
 import java.util.ResourceBundle;
 
-public class InfoKomputer implements Initializable {
+public class InfoKomputerClass implements Initializable {
 
     @FXML
     private MFXTextField computerText;
 
     @FXML
-    private MFXTextField helpdeskText;
+    private Tooltip computerTooltip;
 
+    @FXML
+    private MFXTextField helpdeskText;
 
     @FXML
     private MFXTextField ipText;
 
+    @FXML
+    private Tooltip ipTooltip;
+
+    @FXML
+    private Tooltip phoneTooltip;
+
+    @FXML
+    private Tooltip userTooltip;
 
     @FXML
     private MFXTextField usernameText;
@@ -35,6 +50,8 @@ public class InfoKomputer implements Initializable {
     @FXML
     private MFXTextField websiteText;
 
+    @FXML
+    private Tooltip websiteTooltip;
 
     final Clipboard clipboard = Clipboard.getSystemClipboard();
     final ClipboardContent content = new ClipboardContent();
@@ -44,36 +61,36 @@ public class InfoKomputer implements Initializable {
     void copyToClipboard(MouseEvent event){
 
         String imageID = event.getSource().toString();
-        System.out.println(imageID);
+        Window window = ((Node) event.getTarget()).getScene().getWindow();
         if(imageID.contains("computerCopy")){
             content.putString(computerText.getText());
-
+            computerTooltip.show(window);
         }
 
         if(imageID.contains("userCopy")){
             content.putString(usernameText.getText());
+            userTooltip.show(window);
         }
 
         if(imageID.contains("ipCopy")){
             content.putString(ipText.getText());
-
+            ipTooltip.show(window);
         }
 
         if(imageID.contains("helpdeskCopy")){
             content.putString(helpdeskText.getText());
+            phoneTooltip.show(window);
         }
 
         if(imageID.contains("websiteCopy")){
             content.putString(websiteText.getText());
+            websiteTooltip.show(window);
             try {
                 Desktop.getDesktop().browse(new URI("https://helpdesk"));
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            } catch (URISyntaxException e) {
+            } catch (IOException | URISyntaxException e) {
                 throw new RuntimeException(e);
             }
         }
-
         clipboard.setContent(content);
     }
 
@@ -95,6 +112,31 @@ public class InfoKomputer implements Initializable {
         }
 }
 
+    @FXML
+    void mouseExited(MouseEvent event) {
+        String fieldID = event.getSource().toString();
+        if(fieldID.contains("computerField")){
+           computerTooltip.hide();
+        }
+
+        if(fieldID.contains("userField")){
+            userTooltip.hide();
+        }
+
+        if(fieldID.contains("ipField")){
+           ipTooltip.hide();
+        }
+
+        if(fieldID.contains("phoneField")){
+           phoneTooltip.hide();
+        }
+
+        if(fieldID.contains("websiteField")) {
+            websiteTooltip.hide();
+        }
+    }
+
+
 
 @Override
 public void initialize(URL location,ResourceBundle resources){
@@ -105,5 +147,10 @@ public void initialize(URL location,ResourceBundle resources){
         helpdeskText.setText("22 290 10 02");
         websiteText.setText("https://helpdesk");
 
+    for (Tooltip tooltip : Arrays.asList(computerTooltip, userTooltip, ipTooltip, phoneTooltip, websiteTooltip)) {
+        tooltip.setText("Tekst skopiowano do schowka");
     }
+
+    }
+
 }

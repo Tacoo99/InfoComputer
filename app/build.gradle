@@ -31,7 +31,7 @@ dependencies {
 
 application {
     mainClass = 'infokomputer.App'
-    mainModule ='infokomputer.App.main'
+    mainModule ='InfoKomputer.app.main'
 }
 
 javafx{
@@ -41,7 +41,7 @@ javafx{
 
 jlink {
     launcher {
-        name = 'InfoKomputer'
+        name = 'NetUserGUI'
     }
 
     jpackage{
