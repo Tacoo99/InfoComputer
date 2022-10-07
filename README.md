@@ -3,8 +3,7 @@
  <p align="center"><b>Still in production,</b> <i>more functions soon.</i></p>
 <br>
  <p align="center"><b>Application screenshohot</p></b></p>
- <p><image src="https://user-images.githubusercontent.com/61277838/193586823-3235c1c0-eec1-471b-8592-7735c848bb2c.png"
-></p>
+ <p><image src="https://user-images.githubusercontent.com/61277838/194622118-655a42a1-5e8a-48a7-80de-9a5443001b63.png"></p>
  <br><br>
 
  <p align="center"><a href="https://github.com/Tacoo99/InfoComputer/releases/">Latest release</a></p>
