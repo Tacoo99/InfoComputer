@@ -36,7 +36,6 @@
     -fx-background-color: transparent;
     -fx-border-color: -mfx-purple;
     -fx-border-radius: 3;
-
     -fx-text-fill: -mfx-purple;
 }
 
@@ -53,11 +52,5 @@
 #copyIcon:hover, #computerCopy:hover, #userCopy:hover, #ipCopy:hover, #helpdeskCopy:hover, #websiteCopy:hover, .mfx-text-field:hover{
     -fx-opacity: 0.7;
     -fx-translate-y: 1;
-}
-
-.tooltip{
-    -fx-background-color: white;
-    -fx-text-fill: black;
-    -fx-font-size: 13px;
 }
 
