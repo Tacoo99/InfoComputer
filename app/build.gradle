@@ -41,7 +41,7 @@ javafx{
 
 jlink {
     launcher {
-        name = 'NetUserGUI'
+        name = 'InfoKomputer'
     }
 
     jpackage{
