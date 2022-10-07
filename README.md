@@ -21,6 +21,6 @@
   <li>empty space - e.g helpdesk phone</li>
   <li>another empty sapce for website(clickable)</li>
   <li>of cource we can copy every field with a single button</li>
-  <li>after copy - small confirmation's shows on the bottom of the application
+  <li>after copy - small confirmation shows on the bottom of the application
 </ul>
 <p align="center">If you have an idea for a new feature, feel free to let me know, thanks ;)</p>
