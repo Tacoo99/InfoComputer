@@ -10,8 +10,8 @@
  </br></br>
 
  <b>About program</b>
- <p>The program is used to display user information that is missing from the Active Directory snap-in</p>
- <p>It is still under development, currently has basic functions:</p>
+ <p>The program is used to display user information and computer information with one single click!</p>
+ <p>Stable version is here, list of printed information:</p>
  </span>
  <ul>
   <li>computer name</li>
