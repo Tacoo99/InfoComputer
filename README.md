@@ -17,7 +17,6 @@
   <li>computer name</li>
   <li>username</li>
   <li>ip address</li>
-  <li>forcing a password change and canceling</li>
   <li>empty space - e.g helpdesk phone</li>
   <li>another empty sapce for website(clickable)</li>
   <li>of cource we can copy every field with a single button</li>
